@@ -1,0 +1,30 @@
+{
+  "name": "normal-distribution",
+  "version": "0.1.0",
+  "description": "A lightweight JavaScript library used to calculate normal distributions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rricardof/normal-distribution.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rricardof/normal-distribution/issues"
+  },
+  "homepage": "https://github.com/rricardof/normal-distribution#readme",
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {}
+}
