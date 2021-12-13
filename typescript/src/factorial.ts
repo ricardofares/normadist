@@ -48,7 +48,7 @@ const everySinxteenthFactorial: number[] = [
  * @returns {Number} the factorial from a positive integer number x.
  */
 export function factorial(x: number): number {
-  if (x < 0) throw `The argument must be nonegative. The argument was ${x}.`
+  if (x < 0) throw `The argument must be nonnegative. The argument was ${x}.`
 
   const floorX: number = Math.floor(x)
 
