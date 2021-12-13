@@ -14,6 +14,8 @@ export type ErrorFunction = (x: number) => number
  * If the degree is not specified, then the default degree is set to 15.
  *
  * The approximation of erf(x) by this function is higher as the degree is.
+ * Nevertheless, there is a maximum degree that after that one the accuracy
+ * maintains constant.
  *
  * @param {Number} x the function argument
  * @param {Number} degree the Taylor Polynomial degree, the default degree
