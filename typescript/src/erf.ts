@@ -11,7 +11,7 @@ export type ErrorFunction = (x: number) => number
  * a specified degree that receives a floating-pointer number x and returns
  * an approximation for the value erf(x).
  *
- * If the degree is not specified, then the default degree is set to 15.
+ * If the degree is not specified, then the default degree is set to 40.
  *
  * The approximation of erf(x) by this function is higher as the degree is.
  * Nevertheless, there is a maximum degree that after that one the accuracy
@@ -19,11 +19,11 @@ export type ErrorFunction = (x: number) => number
  *
  * @param {Number} x the function argument
  * @param {Number} degree the Taylor Polynomial degree, the default degree
- *                        is set to 15.
+ *                        is set to 40.
  *
  * @returns {Number} an approximation using Taylor Polynomial for the value of erf(x).
  */
-export function taylorErf(x: number, degree: number = 15): number {
+export function taylorErf(x: number, degree: number = 40): number {
   const a: number = 1.1283791670955126 * x
   let b: number = 0
 
