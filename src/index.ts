@@ -1,4 +1,5 @@
 import { ErrorFunction } from './erf'
+import { factorial } from './factorial'
 
 export default class NormalDistribution {
   /**
@@ -24,12 +25,12 @@ export default class NormalDistribution {
    * If the inserted standard deviation must be non negative. Otherwise, an
    * exception will be thrown. Moreover, if the inserted error function formula
    * approximation is undefined or null, then an exception will be thrown as well.
-   * 
+   *
    * Besides that, if the error function formula produces an inadequate approximation
    * then the normal distribution calculations are inadequate approximations, as well.
    * For that purpose, there are provided many error function formula approximations
    * in this library.
-   * 
+   *
    * @param {Number} mean the normal distribution's mean
    * @param {Number} standardDeviation the normal distribution's standard deviation
    * @param {ErrorFunction} erf the normal distribution's error function formula approximation.
