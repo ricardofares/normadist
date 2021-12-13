@@ -96,4 +96,32 @@ export default class NormalDistribution {
       2.0
     )
   }
+
+  /**
+   * Receives two values that represents the minimum and maximum bound of a real, closed interval and returns
+   * the probability of a normally distributed aleatory variable is in there.
+   *
+   * The value returned by this function is calculated using the {@link cdf} and since the {@link cdf} is calculated
+   * using the {@link erf}, then the use of a {@link erf} function can affect the significant digits of accuracy of
+   * the returned value.
+   *
+   * If the interval is degenerated, that is, the minimum and the maximum bound are equal, the returned value is 0.
+   * Analytically, the probability between two values is the bounds of integration of the probability density function
+   * pdf, since the bounds are equals, then by basic integral calculus property the result value is 0. On other hand,
+   * graphically that integral represents the area below the pdf curve, and the area below a single point degenerates to 0.
+   *
+   * Moreover, if the interval is empty, that is, the start interval is greater than the end interval, the returned value
+   * is 0, because there is not any value that the normally distributed aleatory variable could have.
+   *
+   * @param {Number} startInterval the minimum bound of a real, closed interval
+   * @param {Number} endInterval the maximum bound of real, closed interval
+   *
+   * @returns {Number} the probability of a normally distributed aleatory variable is located at that interval.
+   */
+  between(startInterval: number, endInterval: number): number {
+    /* Check if the interval [s, e] is degenerated or its empty. */
+    if (startInterval >= endInterval) return 0
+
+    return this.cdf(endInterval) - this.cdf(startInterval)
+  }
 }
