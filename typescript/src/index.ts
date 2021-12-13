@@ -39,7 +39,7 @@ export default class NormalDistribution {
    * @param {Number} standardDeviation the normal distribution's standard deviation
    * @param {ErrorFunction} erf the normal distribution's error function formula approximation.
    */
-  constructor(
+  private constructor(
     mean: number = 0.0,
     standardDeviation: number = 1.0,
     erf: ErrorFunction = chebyshevErf
@@ -149,5 +149,24 @@ export default class NormalDistribution {
    */
   variance(): number {
     return this.standardDeviation * this.standardDeviation
+  }
+
+  /**
+   * Returns an instance of a standard {@link NormalDistribution}.
+   *
+   * A standard normal distribution represents a normal distribution that has its {@link mean} set as 0 and the
+   * {@link standardDeviation} set as 1.
+   *
+   * Moreover, can be set an approximation for the {@link ErrorFunction} that will be used to calculate the probabilities
+   * from the standard normal distribution.
+   *
+   * @param {ErroFunction?} erf the error function approximation. If this argument is not set, then the default error
+   *                            function approximation that will be set is that defined at {@link NormalDistribution}
+   *                            default constructor.
+   *
+   * @returns an instance of a standard {@link NormalDistribution}
+   */
+  static standard(erf?: ErrorFunction) {
+    return new NormalDistribution(0.0, 1.0, erf)
   }
 }
