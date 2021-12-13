@@ -1,5 +1,4 @@
 import { ErrorFunction } from './erf'
-import { factorial } from './factorial'
 
 export default class NormalDistribution {
   /**
