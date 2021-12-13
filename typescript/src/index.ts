@@ -142,4 +142,12 @@ export default class NormalDistribution {
   standardize(x: number): number {
     return (x - this.mean) / this.standardDeviation
   }
+
+  /**
+   * Returns the variance of the normal distribution
+   * @returns the variance of the normal distribution
+   */
+  variance(): number {
+    return this.standardDeviation * this.standardDeviation
+  }
 }
