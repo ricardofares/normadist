@@ -169,4 +169,25 @@ export default class NormalDistribution {
   static standard(erf?: ErrorFunction) {
     return new NormalDistribution(0.0, 1.0, erf)
   }
+
+  /**
+   * Returns an instance of {@link NormalDistributio} with {@link mean}, {@link standardDeviation} and {@link ErrorFunction}
+   * possible to be specified.
+   *
+   * If the {@link mean}, {@link standardDeviation} or {@link ErrorFunction} has been not specified, then the default values
+   * set to them are specified by the {@link NormalDistribution}'s default constructor.
+   *
+   * @param {Number} mean the normal distribution's mean
+   * @param {Number} standardDeviation the normal distribution's standard deviation
+   * @param {ErrorFunction} erf the normal distribution's error function formula approximation.
+   *
+   * @returns an instance of {@link NormalDistribution}
+   */
+  static of(
+    mean?: number,
+    standardDeviation?: number,
+    erf?: ErrorFunction
+  ): NormalDistribution {
+    return new NormalDistribution(mean, standardDeviation, erf)
+  }
 }
