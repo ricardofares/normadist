@@ -46,7 +46,7 @@ export default class NormalDistribution {
   }
 
   /**
-   * Recives a floating-point number x and returns the value of the probability density function
+   * Receives a floating-point number x and returns the value of the probability density function
    * from a normal distribution with {@link mean} and {@link standardDeviation} evaluated at x.
    *
    * @param {Number} x the probability density function argument
