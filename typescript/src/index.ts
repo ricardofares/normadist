@@ -61,4 +61,28 @@ export default class NormalDistribution {
 
     return a * c
   }
+
+  /**
+   * Receives a floating-point number x and returns the value of the cumulative distribution function
+   * from a normal distribution with {@link mean} and {@link standardDeviation} evaluated at x.
+   *
+   * The cumulative distribution function, represented as cdf, when evaluated at a number x, represented
+   * as cdf(x) returns the area below the probability density function pdf from the -Infinity to x.
+   *
+   * The charateristic of the cdf is that when the value of x is sufficiently greater than the {@link mean}
+   * the cdf(x) returns a value approximately to 1, such that, if x tends to +Infinity then cdf(x) tends to 1.
+   * On other hand, when the value of x is sufficiently lower than the {@link mean} the cdf(x) returns a value
+   * approximately to 0, such that, if x tends to -Infinity then cdf(x) tends to 0.
+   *
+   * Moreover, the quantity that x must have to be sufficiently greater than {@link mean} that cdf(x) tends to 1
+   * or the quantity that x must have to be sufficiently lower than {@link mean} that cdf(x) tends to 0, depdends on
+   * the value of the {@link standardDeviation}.
+   *
+   * @param {Number} x the cumulative distribution function argument
+   *
+   * @returns {Number} the cumulative distribution function evaluated at x.
+   */
+  cdf(x: number): number {
+    return (1.0 + this.erf(x * Math.SQRT1_2)) / 2.0
+  }
 }
