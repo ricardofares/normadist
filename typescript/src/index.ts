@@ -166,7 +166,7 @@ export default class NormalDistribution {
    *
    * @returns an instance of a standard {@link NormalDistribution}
    */
-  static standard(erf?: ErrorFunction) {
+  static standard(erf?: ErrorFunction): NormalDistribution {
     return new NormalDistribution(0.0, 1.0, erf)
   }
 
