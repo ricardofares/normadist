@@ -42,6 +42,10 @@ export default class NormalDistribution {
     standardDeviation: number,
     erf: ErrorFunction = chebyshevErf
   ) {
+    if (Number.isNaN(mean)) throw 'The mean must be a number.'
+    if (Number.isNaN(standardDeviation))
+      throw 'The standard deviation must be a number'
+
     if (standardDeviation < 0)
       throw `The standard deviation must be nonnegative. The inserted standard deviation was ${standardDeviation}.`
     if (erf === undefined || erf === null)
