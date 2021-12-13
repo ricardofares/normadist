@@ -46,8 +46,8 @@ export default class NormalDistribution {
     if (Number.isNaN(standardDeviation))
       throw 'The standard deviation must be a number'
 
-    if (standardDeviation < 0)
-      throw `The standard deviation must be nonnegative. The inserted standard deviation was ${standardDeviation}.`
+    if (standardDeviation <= 0)
+      throw `The standard deviation must be positive. The inserted standard deviation was ${standardDeviation}.`
     if (erf === undefined || erf === null)
       throw `The error function formula approximation must not be undefined or null.`
 
