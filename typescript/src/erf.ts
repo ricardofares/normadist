@@ -59,3 +59,36 @@ export function vazquezLealErf(x: number): number {
 
   return Math.tanh(a * x - c * Math.atan(b * x))
 }
+
+/**
+ * The error function approximation by the Soranzo Formula, receives a floating-point
+ * number x and returns an approximation for the value erf(x).
+ *
+ * The approximation for the error function is provided in the following article:
+ * https://arxiv.org/pdf/1201.1320v1.pdf
+ *
+ * The relative error bound for that approximation is: 1.21e-4. The source of this
+ * information is provided is the article above, as well.
+ *
+ * @param {Number} x the function argument
+ *
+ * @returns {Number} an approximation using Soranzo formula for the value of erf(x).
+ */
+export function soranzoErf(x: number): number {
+  const x2 = x * x
+  const x4 = x2 * x2
+
+  const a: number = 1.2735457
+  const b: number = 0.1487936
+  const c: number = 0.1480931
+  const d: number = 5.16e-4
+
+  const f: number = Math.sqrt(
+    1 - Math.exp((-x2 * (a + b * x2)) / (1 + c * x2 + d * x4))
+  )
+
+  /* Note: The Soranzo's formula approximates the error function only for the nonnegative */
+  /* values, then since the error function has the property that erf(-x) = -erf(x), we use */
+  /* that property to extend the formula approximation for the negative values. */
+  return x >= 0 ? f : -f
+}
