@@ -80,7 +80,7 @@ export function taylorErf(x: number, degree: number = 40): number {
 }
 
 /**
- * The error function formula approximation by Vazquez-Leal that receives
+ * The error function approximation by the Vazquez-Leal's Formula, receives
  * a floating-point number x and returns an approximation for the value erf(x).
  *
  * The approximation for the error function is provided in their article:
