@@ -119,7 +119,7 @@ export default class NormalDistribution {
    * @returns {Number} the probability of a normally distributed aleatory variable is located at that interval.
    */
   between(startInterval: number, endInterval: number): number {
-    /* Check if the interval [s, e] is degenerated or its empty. */
+    /* Check if the interval [s, e] is degenerated or it is empty. */
     if (startInterval >= endInterval) return 0
 
     return this.cdf(endInterval) - this.cdf(startInterval)
