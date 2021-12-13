@@ -103,7 +103,7 @@ export function vazquezLealErf(x: number): number {
 }
 
 /**
- * The error function approximation by the Soranzo Formula, receives a floating-point
+ * The error function approximation by the Soranzo's Formula, receives a floating-point
  * number x and returns an approximation for the value erf(x).
  *
  * The approximation for the error function is provided in the following article:
@@ -114,7 +114,7 @@ export function vazquezLealErf(x: number): number {
  *
  * @param {Number} x the function argument
  *
- * @returns {Number} an approximation using Soranzo formula for the value of erf(x).
+ * @returns {Number} an approximation using Soranzo's formula for the value of erf(x).
  */
 export function soranzoErf(x: number): number {
   const x2 = x * x
