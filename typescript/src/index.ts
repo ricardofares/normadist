@@ -30,16 +30,18 @@ export default class NormalDistribution {
    * For that purpose, there are provided many error function formula approximations
    * in this library.
    *
+   * The default mean is set to 0 and the default standard deviation is set to 1.
+   *
    * The default error function set for this constructor is the Chebyshev's approximation.
    * For more information, see the documentation of {@link chebyshevErf}.
    *
-   * @param {Number} mean the normal distribution's mean
+   * @param {Number} mean the normal distribution's mean.
    * @param {Number} standardDeviation the normal distribution's standard deviation
    * @param {ErrorFunction} erf the normal distribution's error function formula approximation.
    */
   constructor(
-    mean: number,
-    standardDeviation: number,
+    mean: number = 0.0,
+    standardDeviation: number = 1.0,
     erf: ErrorFunction = chebyshevErf
   ) {
     if (Number.isNaN(mean)) throw 'The mean must be a number.'
