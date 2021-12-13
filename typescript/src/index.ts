@@ -94,11 +94,7 @@ export default class NormalDistribution {
    * @returns {Number} the cumulative distribution function evaluated at x.
    */
   cdf(x: number): number {
-    return (
-      (1.0 +
-        this.erf(((x - this.mean) / this.standardDeviation) * Math.SQRT1_2)) /
-      2.0
-    )
+    return (1.0 + this.erf(this.standardize(x) * Math.SQRT1_2)) / 2.0
   }
 
   /**
@@ -127,5 +123,21 @@ export default class NormalDistribution {
     if (startInterval >= endInterval) return 0
 
     return this.cdf(endInterval) - this.cdf(startInterval)
+  }
+
+  /**
+   * Receives a floating-point number x and returns the standardized value z.
+   *
+   * For instance, the standardization process is used to simplify the calculation of the value of the cumulative
+   * distribution function cdf(x), then instead of calculate directly the cdf(x), supposing that the random variable
+   * X is not a standard normal distribution. Hence, the value of x is standardized for a value z and then we have a
+   * standard normal distribution, such that, the calculation of cdf(z) is easier than cdf(x).
+   *
+   * @param {Number} x the number that will be standardized
+   *
+   * @returns {Number} the standardized x number
+   */
+  standardize(x: number): number {
+    return (x - this.mean) / this.standardDeviation
   }
 }
