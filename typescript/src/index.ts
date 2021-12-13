@@ -1,4 +1,4 @@
-import { ErrorFunction } from './erf'
+import { ErrorFunction, chebyshevErf } from './erf'
 
 export default class NormalDistribution {
   /**
@@ -29,12 +29,15 @@ export default class NormalDistribution {
    * then the normal distribution calculations are inadequate approximations, as well.
    * For that purpose, there are provided many error function formula approximations
    * in this library.
+   * 
+   * The default error function set for this constructor is the Chebyshev's approximation.
+   * For more information, see the documentation of {@link chebyshevErf}.
    *
    * @param {Number} mean the normal distribution's mean
    * @param {Number} standardDeviation the normal distribution's standard deviation
    * @param {ErrorFunction} erf the normal distribution's error function formula approximation.
    */
-  constructor(mean: number, standardDeviation: number, erf: ErrorFunction) {
+  constructor(mean: number, standardDeviation: number, erf: ErrorFunction = chebyshevErf) {
     if (standardDeviation < 0)
       throw `The standard deviation must be nonnegative. The inserted standard deviation was ${standardDeviation}.`
     if (erf === undefined || erf === null)
