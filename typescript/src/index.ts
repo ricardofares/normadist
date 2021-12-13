@@ -44,4 +44,21 @@ export default class NormalDistribution {
     this.standardDeviation = standardDeviation
     this.erf = erf
   }
+
+  /**
+   * Recives a floating-point number x and returns the value of the probability density function
+   * from a normal distribution with {@link mean} and {@link standardDeviation} evaluated at x.
+   *
+   * @param {Number} x the probability density function argument
+   *
+   * @returns {Number} the value of the probability density function evaluated at x.
+   */
+  pdf(x: number): number {
+    const inverseStandardDeviation: number = 1.0 / this.standardDeviation
+    const a: number = 0.3989422804014327 * inverseStandardDeviation
+    const b: number = Math.pow((x - this.mean) * inverseStandardDeviation, 2)
+    const c: number = Math.exp(-b / 2.0)
+
+    return a * c
+  }
 }
