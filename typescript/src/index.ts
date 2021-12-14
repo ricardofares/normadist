@@ -35,9 +35,9 @@ export default class NormalDistribution {
    * The default error function set for this constructor is the Chebyshev's approximation.
    * For more information, see the documentation of {@link chebyshevErf}.
    *
-   * @param {Number} mean the normal distribution's mean.
-   * @param {Number} standardDeviation the normal distribution's standard deviation
-   * @param {ErrorFunction} erf the normal distribution's error function formula approximation.
+   * @param {Number} [mean] the normal distribution's mean.
+   * @param {Number} [standardDeviation] the normal distribution's standard deviation
+   * @param {ErrorFunction} [erf] the normal distribution's error function formula approximation.
    */
   private constructor(
     mean: number = 0.0,
@@ -160,7 +160,7 @@ export default class NormalDistribution {
    * Moreover, can be set an approximation for the {@link ErrorFunction} that will be used to calculate the probabilities
    * from the standard normal distribution.
    *
-   * @param {ErrorFunction?} erf the error function approximation. If this argument is not set, then the default error
+   * @param {ErrorFunction} [erf] the error function approximation. If this argument is not set, then the default error
    *                            function approximation that will be set is that defined at {@link NormalDistribution}
    *                            default constructor.
    *
@@ -177,9 +177,9 @@ export default class NormalDistribution {
    * If the {@link mean}, {@link standardDeviation} or {@link ErrorFunction} has been not specified, then the default values
    * set to them are specified by the {@link NormalDistribution}'s default constructor.
    *
-   * @param {Number} mean the normal distribution's mean
-   * @param {Number} standardDeviation the normal distribution's standard deviation
-   * @param {ErrorFunction} erf the normal distribution's error function formula approximation.
+   * @param {Number} [mean] the normal distribution's mean
+   * @param {Number} [standardDeviation] the normal distribution's standard deviation
+   * @param {ErrorFunction} [erf] the normal distribution's error function formula approximation.
    *
    * @returns an instance of {@link NormalDistribution}
    */
