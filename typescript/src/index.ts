@@ -160,7 +160,7 @@ export default class NormalDistribution {
    * Moreover, can be set an approximation for the {@link ErrorFunction} that will be used to calculate the probabilities
    * from the standard normal distribution.
    *
-   * @param {ErroFunction?} erf the error function approximation. If this argument is not set, then the default error
+   * @param {ErrorFunction?} erf the error function approximation. If this argument is not set, then the default error
    *                            function approximation that will be set is that defined at {@link NormalDistribution}
    *                            default constructor.
    *
