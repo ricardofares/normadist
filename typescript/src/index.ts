@@ -1,4 +1,5 @@
 import { ErrorFunction, chebyshevErf } from './erf'
+import { InverseComplementaryErrorFunction, acklamIerfc } from './ierf'
 
 export default class NormalDistribution {
   /**
@@ -97,6 +98,34 @@ export default class NormalDistribution {
    */
   cdf(x: number): number {
     return (1.0 + this.erf(this.standardize(x) * Math.SQRT1_2)) / 2.0
+  }
+
+  /**
+   * Receives a floating-point number x and returns the value of the inverse of cumulative distribution function
+   * from a normal distribution with {@link mean} and {@link standardDeviation} evaluated at x.
+   *
+   * The inverse of cumulative distribution function, also is called as quantile function, percentile function and
+   * percent-point function.
+   *
+   * The inverse of cumulative distribution function is used to return the value p for a normally distributed random
+   * variable with these {@link mean} and {@link standardDeviation}, such that, the area below the graphic of the
+   * probability density function is equals to x.
+   *
+   * Besides that, this method provides a way to provide the approximation for the Inverse of Complementary Error Function
+   * that is used to calculate the inverse of cumulative distribution function. Thus, the accuracy of the approximation for
+   * the ppf is relative to the approximation provided for the ierfc. That said, the default inverse of complementary error
+   * function used is {@link acklamIerfc}.
+   *
+   * @param {Number} x the inverse of cumulative distribution function argument
+   * @param {Number} ierfc the inverse of complementary error approximation function
+   *
+   * @returns {Number} the inverse of cumulative distribution function evaluated at x.
+   */
+  ppf(
+    x: number,
+    ierfc: InverseComplementaryErrorFunction = acklamIerfc
+  ): number {
+    return this.mean - this.standardDeviation * Math.SQRT2 * ierfc(2.0 * x)
   }
 
   /**
