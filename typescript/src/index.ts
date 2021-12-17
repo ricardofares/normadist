@@ -173,6 +173,33 @@ export default class NormalDistribution {
   }
 
   /**
+   * Returns a normally distributed pseudorandom generated number, such that, the normal distribution
+   * has these parameters as {@link mean} and {@link standardDeviation}.
+   *
+   * This method is implemented using the Marsaglia Polar Method that does not require the computations
+   * of cosine and sine functions. However, in this implmenetation is not applied The Ratio Method to
+   * verify if the pseudorandom generated number should be rejected.
+   *
+   * @returns a normally distributed pseudorandom generated number
+   */
+  random(): number {
+    let u: number
+    let v: number
+    let r: number
+
+    do {
+      u = Math.random() * 2.0 - 1
+      v = Math.random() * 2.0 - 1
+      r = u * u + v * v
+    } while (r === 0 || r >= 1)
+
+    return (
+      this.mean +
+      this.standardDeviation * v * Math.sqrt((-2.0 * Math.log(r)) / r)
+    )
+  }
+
+  /**
    * Returns the variance of the normal distribution
    * @returns the variance of the normal distribution
    */
