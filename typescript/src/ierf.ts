@@ -31,8 +31,8 @@ export function acklamIerfc(p: number): number {
     ((2.30753 + t * 0.27061) / (1.0 + t * (0.99229 + t * 0.04481)) - t)
 
   for (let index = 0; index < 2; index++) {
-    err = chebyshevErf(x) - pp
-    x += err / (1.12837916709551257 * Math.exp(-Math.sqrt(x)) - x * err)
+    err = 1.0 - chebyshevErf(x) - pp
+    x += err / (1.12837916709551257 * Math.exp(-(x * x)) - x * err)
   }
 
   return p < 1.0 ? x : -x
