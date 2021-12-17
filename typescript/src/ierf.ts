@@ -16,7 +16,7 @@ export type InverseComplementaryErrorFunction = (x: number) => number
  * @param {Number} p the function argument
  *
  * @returns {Number} an approximation using P. J. Acklam formula for compute the value
- *                   of erfc^{-1}(x).
+ *                   of erfc^{-1}(x)
  */
 export function acklamIerfc(p: number): number {
   if (p >= 2.0) return -100.0

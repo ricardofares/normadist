@@ -36,9 +36,9 @@ export default class NormalDistribution {
    * The default error function set for this constructor is the Chebyshev's approximation.
    * For more information, see the documentation of {@link chebyshevErf}.
    *
-   * @param {Number} [mean] the normal distribution's mean.
+   * @param {Number} [mean] the normal distribution's mean
    * @param {Number} [standardDeviation] the normal distribution's standard deviation
-   * @param {ErrorFunction} [erf] the normal distribution's error function formula approximation.
+   * @param {ErrorFunction} [erf] the normal distribution's error function formula approximation
    */
   private constructor(
     mean: number = 0.0,
@@ -65,7 +65,7 @@ export default class NormalDistribution {
    *
    * @param {Number} x the probability density function argument
    *
-   * @returns {Number} the value of the probability density function evaluated at x.
+   * @returns {Number} the value of the probability density function evaluated at x
    */
   pdf(x: number): number {
     const inverseStandardDeviation: number = 1.0 / this.standardDeviation
@@ -94,7 +94,7 @@ export default class NormalDistribution {
    *
    * @param {Number} x the cumulative distribution function argument
    *
-   * @returns {Number} the cumulative distribution function evaluated at x.
+   * @returns {Number} the cumulative distribution function evaluated at x
    */
   cdf(x: number): number {
     return (1.0 + this.erf(this.standardize(x) * Math.SQRT1_2)) / 2.0
@@ -119,7 +119,7 @@ export default class NormalDistribution {
    * @param {Number} x the inverse of cumulative distribution function argument
    * @param {Number} ierfc the inverse of complementary error approximation function
    *
-   * @returns {Number} the inverse of cumulative distribution function evaluated at x.
+   * @returns {Number} the inverse of cumulative distribution function evaluated at x
    */
   ppf(
     x: number,
@@ -147,7 +147,7 @@ export default class NormalDistribution {
    * @param {Number} startInterval the minimum bound of a real, closed interval
    * @param {Number} endInterval the maximum bound of real, closed interval
    *
-   * @returns {Number} the probability of a normally distributed aleatory variable is located at that interval.
+   * @returns {Number} the probability of a normally distributed aleatory variable is located at that interval
    */
   between(startInterval: number, endInterval: number): number {
     /* Check if the interval [s, e] is degenerated or it is empty. */
@@ -217,7 +217,7 @@ export default class NormalDistribution {
    *
    * @param {ErrorFunction} [erf] the error function approximation. If this argument is not set, then the default error
    *                            function approximation that will be set is that defined at {@link NormalDistribution}
-   *                            default constructor.
+   *                            default constructor
    *
    * @returns an instance of a standard {@link NormalDistribution}
    */
@@ -234,7 +234,7 @@ export default class NormalDistribution {
    *
    * @param {Number} [mean] the normal distribution's mean
    * @param {Number} [standardDeviation] the normal distribution's standard deviation
-   * @param {ErrorFunction} [erf] the normal distribution's error function formula approximation.
+   * @param {ErrorFunction} [erf] the normal distribution's error function formula approximation
    *
    * @returns an instance of {@link NormalDistribution}
    */

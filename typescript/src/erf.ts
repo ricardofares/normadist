@@ -18,7 +18,7 @@ export type ErrorFunction = (x: number) => number
  *
  * @param {Number} x the function argument
  *
- * @returns {Number} an approximation using Chebyshev's Formula for the value of erf(x).
+ * @returns {Number} an approximation using Chebyshev's Formula for the value of erf(x)
  */
 export function chebyshevErf(x: number): number {
   const z: number = Math.abs(x)
@@ -61,9 +61,9 @@ export function chebyshevErf(x: number): number {
  *
  * @param {Number} x the function argument
  * @param {Number} degree the Taylor Polynomial degree, the default degree
- *                        is set to 40.
+ *                        is set to 40
  *
- * @returns {Number} an approximation using Taylor Polynomial for the value of erf(x).
+ * @returns {Number} an approximation using Taylor Polynomial for the value of erf(x)
  */
 export function taylorErf(x: number, degree: number = 40): number {
   const a: number = 1.1283791670955126 * x
@@ -92,7 +92,7 @@ export function taylorErf(x: number, degree: number = 40): number {
  *
  * @param {Number} x the function argument
  *
- * @returns {Number} an approximation using Vazquez-Leal for the value of erf(x).
+ * @returns {Number} an approximation using Vazquez-Leal for the value of erf(x)
  */
 export function vazquezLealErf(x: number): number {
   const a: number = 11.001696879181248
@@ -114,7 +114,7 @@ export function vazquezLealErf(x: number): number {
  *
  * @param {Number} x the function argument
  *
- * @returns {Number} an approximation using Soranzo's formula for the value of erf(x).
+ * @returns {Number} an approximation using Soranzo's formula for the value of erf(x)
  */
 export function soranzoErf(x: number): number {
   const x2 = x * x
