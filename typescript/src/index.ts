@@ -177,8 +177,7 @@ export default class NormalDistribution {
    * has these parameters as {@link mean} and {@link standardDeviation}.
    *
    * This method is implemented using the Marsaglia Polar Method that does not require the computations
-   * of cosine and sine functions. However, in this implmenetation is not applied The Ratio Method to
-   * verify if the pseudorandom generated number should be rejected.
+   * of cosine and sine functions.
    *
    * @returns a normally distributed pseudorandom generated number
    */
