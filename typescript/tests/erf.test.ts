@@ -4,7 +4,7 @@ import {
   taylorErf,
   vazquezLealErf,
   soranzoErf
-} from '../src/erf'
+} from '@/erf'
 
 /**
  * This array contains the all functions that represents
