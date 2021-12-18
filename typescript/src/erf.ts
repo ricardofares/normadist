@@ -122,6 +122,8 @@ export function soranzoErf(x: number): number {
   const x2 = x * x
   const x4 = x2 * x2
 
+  if (x4 === Infinity) return 1.0
+
   const a: number = 1.2735457
   const b: number = 0.1487936
   const c: number = 0.1480931
