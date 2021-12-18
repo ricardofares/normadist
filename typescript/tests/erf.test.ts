@@ -7,8 +7,8 @@ import {
 } from '@/erf'
 
 /**
- * This array contains the all functions that represents
- * the approximation formulas for the error function erf(x).
+ * This array contains all functions that represents the
+ * approximation formulas for the error function erf(x).
  */
 const erfs: ErrorFunction[] = [
   chebyshevErf,
