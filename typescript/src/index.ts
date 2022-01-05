@@ -5,18 +5,18 @@ export default class NormalDistribution {
   /**
    * The normal distribution's mean.
    */
-  private readonly mean: number
+  readonly mean: number
 
   /**
    * The normal distribution's standard deviation.
    */
-  private readonly standardDeviation: number
+  readonly standardDeviation: number
 
   /**
    * The error function approximation that will be used
    * to approximate the value of erf(x).
    */
-  private readonly erf: ErrorFunction
+  readonly erf: ErrorFunction
 
   /**
    * Default constructor of {@link NormalDistribution} that defines the normal
