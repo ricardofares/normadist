@@ -249,14 +249,14 @@ export default class NormalDistribution {
   /**
    * Returns true if the continous random variable with the given cumulative distribution function, mean and standard deviation
    * is normally distributed. Otherwise, returns false.
-   * 
+   *
    * Furthermore, there is a tolerance that can be adjusted; the default value for that is 1e-2.
-   * 
+   *
    * @param {Function} cdf the cumulative distribution function
    * @param {Number} mean the mean
    * @param {Number} standardDeviation the standard deviation
    * @param {Number} [tolerance] the tolerance. The default value is 1e-2.
-   * 
+   *
    * @returns  true if the continous random variable with the given cumulative distribution function, mean and standard deviation
    *           is normally distributed. Otherwise, returns false.
    */
@@ -266,6 +266,11 @@ export default class NormalDistribution {
     standardDeviation: number,
     tolerance: number = 1e-2
   ): boolean {
+    if (Number.isNaN(mean)) throw 'The mean must be a number'
+    if (Number.isNaN(standardDeviation))
+      throw 'The standard deviation must be a number'
+    if (standardDeviation <= 0) throw 'The standard deviation must be positive'
+
     const insideFirstStandardDeviation: number =
       cdf(mean + standardDeviation) - cdf(mean - standardDeviation)
 
