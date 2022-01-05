@@ -39,6 +39,9 @@ export default class NormalDistribution {
    * @param {Number} [mean] the normal distribution's mean
    * @param {Number} [standardDeviation] the normal distribution's standard deviation
    * @param {ErrorFunction} [erf] the normal distribution's error function formula approximation
+   * 
+   * @throws an exception if the mean or standard deviation is NaN (not-a-number), if the standard deviation
+   *         is not positive and finally if the error function approximation is undefined or null
    */
   private constructor(
     mean: number = 0.0,
@@ -255,10 +258,13 @@ export default class NormalDistribution {
    * @param {Function} cdf the cumulative distribution function
    * @param {Number} mean the mean
    * @param {Number} standardDeviation the standard deviation
-   * @param {Number} [tolerance] the tolerance. The default value is 1e-2.
+   * @param {Number} [tolerance] the tolerance. The default value is 1e-2
    *
    * @returns  true if the continous random variable with the given cumulative distribution function, mean and standard deviation
-   *           is normally distributed. Otherwise, returns false.
+   *           is normally distributed. Otherwise, returns false
+   * 
+   * @throws an exception if the mean or if the standard deviation is NaN (not-a-number) and finally if the standard deviation
+   *         is not a positive number
    */
   static isNormalDistributed(
     cdf: (x: number) => number,
