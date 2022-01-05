@@ -245,4 +245,51 @@ export default class NormalDistribution {
   ): NormalDistribution {
     return new NormalDistribution(mean, standardDeviation, erf)
   }
+
+  /**
+   * Returns true if the continous random variable with the given cumulative distribution function, mean and standard deviation
+   * is normally distributed. Otherwise, returns false.
+   * 
+   * Furthermore, there is a tolerance that can be adjusted; the default value for that is 1e-2.
+   * 
+   * @param {Function} cdf the cumulative distribution function
+   * @param {Number} mean the mean
+   * @param {Number} standardDeviation the standard deviation
+   * @param {Number} [tolerance] the tolerance. The default value is 1e-2.
+   * 
+   * @returns  true if the continous random variable with the given cumulative distribution function, mean and standard deviation
+   *           is normally distributed. Otherwise, returns false.
+   */
+  static isNormalDistributed(
+    cdf: (x: number) => number,
+    mean: number,
+    standardDeviation: number,
+    tolerance: number = 1e-2
+  ): boolean {
+    const insideFirstStandardDeviation: number =
+      cdf(mean + standardDeviation) - cdf(mean - standardDeviation)
+
+    if (
+      Math.abs(insideFirstStandardDeviation - 0.6826894772086507) >= tolerance
+    )
+      return false
+
+    const insideSecondStandardDeviation: number =
+      cdf(mean + 2 * standardDeviation) - cdf(mean - 2 * standardDeviation)
+
+    if (
+      Math.abs(insideSecondStandardDeviation - 0.954499740219751) >= tolerance
+    )
+      return false
+
+    const insideThirdStandardDeviation: number =
+      cdf(mean + 3 * standardDeviation) - cdf(mean - 3 * standardDeviation)
+
+    if (
+      Math.abs(insideThirdStandardDeviation - 0.9973002038534888) >= tolerance
+    )
+      return false
+
+    return true
+  }
 }
