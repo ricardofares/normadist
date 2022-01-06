@@ -1,8 +1,9 @@
 {
-  "name": "normal-distribution-2",
-  "version": "0.0.1",
-  "description": "A lightweight JavaScript library used to calculate normal distributions",
-  "main": "index.js",
+  "name": "normadist",
+  "version": "1.0.0",
+  "description": "A lightweight TypeScript package used to model normal distributions",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "build": "tsc --declaration -p tsconfig-build.json",
@@ -10,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rricardof/normal-distribution.git"
+    "url": "git+https://github.com/rricardof/normadist.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [ "normal", "distribution", "gaussian", "mathematics", "probability", "statistics" ],
+  "author": "rricardof",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rricardof/normal-distribution/issues"
+    "url": "https://github.com/rricardof/normadist/issues"
   },
-  "homepage": "https://github.com/rricardof/normal-distribution#readme",
+  "homepage": "https://github.com/rricardof/normadist#readme",
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "eslint": "^8.4.1",
