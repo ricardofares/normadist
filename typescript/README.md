@@ -102,3 +102,7 @@ Returns a `standard normal distribution`, that is, the normal distribution with 
 #### *static* #of(mean, standardDeviation[, erf])
 
 Returns a `normal distribution` with specified `mean` and `standardDeviation`. Further, the user can still specify the implementation of the error function. However, this it is not *recommended*.
+
+#### *static* #isNormalDistributed(cdf, mean, standardDeviation[, tolerance])
+
+Returns `true` if the distribution specified by the *cumulative distribution function* is approximately normal distributed. Otherwise, `false` is returned. Furthermore, the tolerance can be adjusted, such that, the reliability about `cdf` is adjusted.
