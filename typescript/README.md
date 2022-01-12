@@ -20,7 +20,7 @@ To use a normal distribution the library user can do the right below little piec
 If it has been using `JavaScript`
 
 ```javascript
-const { default: NormalDistribution } = require('normadist');
+const { NormalDistribution } = require('normadist');
 
 // Instantiating the standard normal distribution.
 const distribution = NormalDistribution.standard();
@@ -32,7 +32,7 @@ console.log(distribution.cdf(0.2));
 If it has been using `TypeScript`
 
 ```typescript
-import NormalDistribution from 'normadist';
+import { NormalDistribution } from 'normadist';
 
 // Instantiating the standard normal distribution.
 const distribution = NormalDistribution.standard();
