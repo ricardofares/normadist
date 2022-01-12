@@ -1,6 +1,6 @@
 {
   "name": "normadist",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lightweight TypeScript package used to model normal distributions",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
