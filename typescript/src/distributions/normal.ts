@@ -262,7 +262,7 @@ export class NormalDistribution {
    * @param {Function} cdf the cumulative distribution function
    * @param {Number} mean the mean
    * @param {Number} standardDeviation the standard deviation
-   * @param {Number} [tolerance] the tolerance. The default value is 1e-2
+   * @param {Number} [tolerance] the tolerance. The default value is 0.5e-2
    *
    * @returns  true if the continous random variable with the given cumulative distribution function, mean and standard deviation
    *           is normally distributed. Otherwise, returns false
@@ -274,7 +274,7 @@ export class NormalDistribution {
     cdf: (x: number) => number,
     mean: number,
     standardDeviation: number,
-    tolerance: number = 1e-2
+    tolerance: number = 0.5e-2
   ): boolean {
     if (Number.isNaN(mean)) throw new Error('The mean must be a number')
     if (Number.isNaN(standardDeviation))
