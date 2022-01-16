@@ -1,4 +1,4 @@
-import { chebyshevErf } from './erf'
+import { erf } from './erf'
 
 /**
  * Represents the type a {@link InverseComplementaryErrorFunction} that represents
@@ -31,7 +31,7 @@ export function acklamIerfc(p: number): number {
     ((2.30753 + t * 0.27061) / (1.0 + t * (0.99229 + t * 0.04481)) - t)
 
   for (let index = 0; index < 2; index++) {
-    err = 1.0 - chebyshevErf(x) - pp
+    err = 1.0 - erf(x) - pp
     x += err / (1.12837916709551257 * Math.exp(-(x * x)) - x * err)
   }
 

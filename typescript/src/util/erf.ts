@@ -18,7 +18,7 @@ export type ErrorFunction = (x: number) => number
  *
  * @returns {Number} an approximation using Chebyshev's Formula for the value of erf(x)
  */
-export function chebyshevErf(x: number): number {
+export function erf(x: number): number {
   if (x === 0.0) return 0.0
 
   const z: number = Math.abs(x)
