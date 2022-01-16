@@ -50,12 +50,12 @@ const everySinxteenthFactorial: number[] = [
 export default function factorial(x: number): number {
   if (x < 0) throw `The argument must be nonnegative. The argument was ${x}.`
 
-  const floorX: number = Math.floor(x)
+  const fx: number = Math.floor(x)
 
-  if (Number.isNaN(floorX)) return Number.NaN
-  if (floorX > MAX_FACTORIAL_ARG) return Number.POSITIVE_INFINITY
+  if (Number.isNaN(fx)) return Number.NaN
+  if (fx > MAX_FACTORIAL_ARG) return Number.POSITIVE_INFINITY
 
   let s: number = 1.0
-  for (let index = 1 + (floorX & ~0xf); index <= floorX; index++) s *= index
-  return s * everySinxteenthFactorial[floorX >> 4]
+  for (let index = 1 + (fx & ~0xf); index <= fx; index++) s *= index
+  return s * everySinxteenthFactorial[fx >> 4]
 }
