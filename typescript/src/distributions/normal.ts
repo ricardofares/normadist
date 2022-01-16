@@ -50,12 +50,16 @@ export class NormalDistribution {
   ) {
     if (Number.isNaN(mean)) throw 'The mean must be a number.'
     if (Number.isNaN(standardDeviation))
-      throw 'The standard deviation must be a number'
+      throw new Error('The standard deviation must be a number')
 
     if (standardDeviation <= 0)
-      throw `The standard deviation must be positive. The inserted standard deviation was ${standardDeviation}.`
+      throw new Error(
+        `The standard deviation must be positive. The inserted standard deviation was ${standardDeviation}.`
+      )
     if (erf === undefined || erf === null)
-      throw `The error function formula approximation must not be undefined or null.`
+      throw new Error(
+        `The error function formula approximation must not be undefined or null.`
+      )
 
     this.mean = mean
     this.standardDeviation = standardDeviation
@@ -272,10 +276,11 @@ export class NormalDistribution {
     standardDeviation: number,
     tolerance: number = 1e-2
   ): boolean {
-    if (Number.isNaN(mean)) throw 'The mean must be a number'
+    if (Number.isNaN(mean)) throw new Error('The mean must be a number')
     if (Number.isNaN(standardDeviation))
-      throw 'The standard deviation must be a number'
-    if (standardDeviation <= 0) throw 'The standard deviation must be positive'
+      throw new Error('The standard deviation must be a number')
+    if (standardDeviation <= 0)
+      throw new Error('The standard deviation must be positive')
 
     const insideFirstStandardDeviation: number =
       cdf(mean + standardDeviation) - cdf(mean - standardDeviation)
