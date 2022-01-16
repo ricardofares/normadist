@@ -1,4 +1,4 @@
-import { factorial } from './factorial'
+import factorial from './factorial'
 
 /**
  * Represents the type of a {@link ErrorFunction} that represents
