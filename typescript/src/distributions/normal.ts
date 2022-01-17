@@ -1,5 +1,5 @@
-import { ErrorFunction, erf as chebyshevErf } from '@/util/erf'
-import { InverseComplementaryErrorFunction, acklamIerfc } from '@/util/ierf'
+import { ErrorFunction, erf as chebyshevErf } from '../util/erf'
+import { InverseComplementaryErrorFunction, acklamIerfc } from '../util/ierf'
 
 export class NormalDistribution {
   /**
