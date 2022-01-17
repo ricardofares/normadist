@@ -1,4 +1,7 @@
 {
+  "exclude": [
+    "./tests/**/*.ts"
+  ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
@@ -31,9 +34,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
-    "exclude": [
-      "./tests/**/*.ts"
-    ]
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
     "types": ["./dist/index.d.ts", "jest"],                                      /* Specify type package names to be included without being referenced in a source file. */
